@@ -8,14 +8,14 @@
 </head>
 <body> 
     <!-- formulaire -->   
-    <form> 
+    <form id="inscriptionForm"> 
         <h4>Inscription</h4>
         <div >
-            <input type="text" id="name" placeholder="Votre Nom ici" autocomplete="on" required>
+            <input type="text" id="nom" placeholder="Votre Nom ici" autocomplete="on" required>
         </div> 
 
         <div>
-            <input type="text" id="lastName" placeholder="Votre Prenom ici" autocomplete="on" required>
+            <input type="text" id="prenom" placeholder="Votre Prenom ici" autocomplete="on" required>
         </div> 
 
         <div>
@@ -23,9 +23,9 @@
         </div> 
        
         <div>
-            <input type="submit"  value="S'inscrire">
+            <input type="submit" id="sousMettre" value="S'inscrire">
         </div> 
-        <p>Vous avez déjà un compte? <a href="#">Se connecter</a></p>
+        <p>Vous avez déjà un compte? <a href="#" id="connexion">Se connecter</a></p>
     </form>
    
 
