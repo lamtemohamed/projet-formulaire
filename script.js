@@ -3,43 +3,28 @@
 
 document.getElementById("inscriptionForm").addEventListener(submit, function(event){
     event.preventDefault; 
+})   
 
-    /* on va récuper les valeurs de chaque 
-    element de notre form*/ 
+   //on va creer un serveur propre 
 
-    let nom = document.getElementById("nom").value; 
-    let prenom = document.getElementById("prenom").value; 
-    let email = document.getElementById("email").value; 
+   const user = {
+    username: "mohamed55", 
+    password: "12345"
+   }
 
-    /* on va créer un objet pour stocké nos données */ 
+    const Nom = document.getElementById("nom").value; 
+    const preNom = document.getElementById("prenom").value; 
+    const Email = document.getElementById("email").value;  
 
-    let data = { 
-        nom: nom, 
-        prenom : prenom, 
-        email: email 
-        
-    };  
+    // conditionner les points 
 
-    // on va envoyer ces données vers un server 
+    if(user.username === Nom){
+        alert(" Le nom est :"); 
+    }
+    else if(user.username === preNom){
+        alert(" Le prenom est : ");
+    }
+    else if(user.username === Email){
+        alert(" L'email est : ")
+    } 
 
-    fetch("https://www.pierre-giraud.com", {
-        method: "post", 
-        headers:{
-            "content-type": "application/json" 
-        }, 
-
-        body: JSON.stringify(data)
-    }) 
-    // on va gerer les reponses 
-    .then(response => response.json()) 
-    .then(data =>{  
-        console.log("La réponse du serveur :", data); 
-
-
-    }) 
-
-    .catch(error =>{
-        console.log("L'erreur lors de l'envoie du formulaire", error);
-    }); 
-
-})
